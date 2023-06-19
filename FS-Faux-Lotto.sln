@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FS-Faux-Lotto", "FS-Faux-Lotto\FS-Faux-Lotto.csproj", "{858756B2-D79E-4F74-9BA5-AF78FEA18E42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{858756B2-D79E-4F74-9BA5-AF78FEA18E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{858756B2-D79E-4F74-9BA5-AF78FEA18E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858756B2-D79E-4F74-9BA5-AF78FEA18E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{858756B2-D79E-4F74-9BA5-AF78FEA18E42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2520DDB5-AEA4-469A-BD81-C0502E796228}
+	EndGlobalSection
+EndGlobal
