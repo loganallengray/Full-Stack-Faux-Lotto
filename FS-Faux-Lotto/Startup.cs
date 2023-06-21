@@ -1,3 +1,5 @@
+using FS_Faux_Lotto.Repositories;
+using FS_Faux_Lotto.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,7 +32,10 @@ namespace FS_Faux_Lotto
         public void ConfigureServices(IServiceCollection services)
         {
             IdentityModelEventSource.ShowPII = true;
-            //services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ICoinGameRepository, CoinGameRepository>();
+            services.AddTransient<IHorseGameRepository, HorseGameRepository>();
+            services.AddTransient<ICardGameRepository, CardGameRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
 
             var firebaseProjectId = Configuration.GetValue<string>("FirebaseProjectId");
             var googleTokenUrl = $"https://securetoken.google.com/{firebaseProjectId}";
