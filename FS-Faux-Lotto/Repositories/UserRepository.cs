@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace FS_Faux_Lotto.Repositories
 {
-    public class UserRepository : BaseRepository
+    public class UserRepository : BaseRepository, IUserRepository
     {
         public UserRepository(IConfiguration configuration) : base(configuration) { }
 

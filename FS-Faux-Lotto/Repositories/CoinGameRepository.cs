@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace FS_Faux_Lotto.Repositories
 {
-    public class CoinGameRepository : BaseRepository
+    public class CoinGameRepository : BaseRepository, ICoinGameRepository
     {
         public CoinGameRepository(IConfiguration configuration) : base(configuration) { }
 

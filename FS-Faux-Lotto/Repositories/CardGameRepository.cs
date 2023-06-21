@@ -7,7 +7,7 @@ using FS_Faux_Lotto.Repositories.Interfaces;
 
 namespace FS_Faux_Lotto.Repositories
 {
-    public class CardGameRepository : BaseRepository
+    public class CardGameRepository : BaseRepository, ICardGameRepository
     {
         public CardGameRepository(IConfiguration configuration) : base(configuration) { }
 
