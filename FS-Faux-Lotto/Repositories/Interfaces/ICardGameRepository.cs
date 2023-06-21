@@ -2,7 +2,7 @@
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
 
-namespace FS_Faux_Lotto.Repositories
+namespace FS_Faux_Lotto.Repositories.Interfaces
 {
     public interface ICardGameRepository
     {
