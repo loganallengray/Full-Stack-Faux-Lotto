@@ -5,6 +5,7 @@ import Header from './components/nav/Header';
 import ApplicationView from './components/ApplicationView';
 import HeaderUnauth from './components/nav/HeaderUnauth';
 import ApplicationViewUnauth from './components/ApplicationViewUnauth';
+import { BrowserRouter } from 'react-router-dom';
 
 // Returns Header at the top always
 // Returns Applications Views, where all the available views are contained.
@@ -13,7 +14,7 @@ import ApplicationViewUnauth from './components/ApplicationViewUnauth';
 
 const App = () => {
   return (
-    <div className="App">
+    <BrowserRouter>
       {true ? (
         <>
           <Header />
@@ -25,7 +26,7 @@ const App = () => {
           <ApplicationViewUnauth />
         </>
       )}
-    </div>
+    </BrowserRouter>
   );
 }
 
