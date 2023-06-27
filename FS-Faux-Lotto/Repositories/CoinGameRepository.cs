@@ -21,8 +21,8 @@ namespace FS_Faux_Lotto.Repositories
                     cmd.CommandText = @"
                         SELECT cg.Id, cg.UserId, cg.AmountBet,
 	                        cg.NewAmount, cg.Choice, cg.Outcome,
-                            cg.Win, cg.Featured, cg.Date
-                        FROM CoinGame cg";
+                            cg.Win, cg.Featured, cg.[Date]
+                        FROM CoinGames cg";
 
                     var bounties = new List<CoinGame>();
 
@@ -49,8 +49,8 @@ namespace FS_Faux_Lotto.Repositories
                     cmd.CommandText = @"
                         SELECT cg.Id, cg.UserId, cg.AmountBet,
 	                        cg.NewAmount, cg.Choice, cg.Outcome,
-                            cg.Win, cg.Featured, cg.Date
-	                    FROM CoinGame cg
+                            cg.Win, cg.Featured, cg.[Date]
+	                    FROM CoinGames cg
                         WHERE cg.Id = @id";
                     cmd.Parameters.AddWithValue("@id", id);
 
@@ -77,7 +77,7 @@ namespace FS_Faux_Lotto.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        INSERT INTO CoinGame ( UserId, AmountBet, NewAmount, Choice, Outcome, Win, Featured, Date )
+                        INSERT INTO CoinGames ( UserId, AmountBet, NewAmount, Choice, Outcome, Win, Featured, [Date] )
                         OUTPUT INSERTED.ID
                         VALUES ( @UserId, @AmountBet, @NewAmount, @Choice, @Outcome, @Win, @Featured, @Date )";
                     cmd.Parameters.AddWithValue("@UserId", coinGame.UserId);
@@ -103,7 +103,7 @@ namespace FS_Faux_Lotto.Repositories
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        DELETE FROM CoinGame
+                        DELETE FROM CoinGames
                         WHERE Id = @id";
                     cmd.Parameters.AddWithValue("@id", id);
 

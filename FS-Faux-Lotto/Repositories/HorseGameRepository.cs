@@ -19,10 +19,11 @@ namespace FS_Faux_Lotto.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        SELECT hg.Id, hg.UserId, hg.AmountBet,
-	                        hg.NewAmount, hg.Choice, hg.Outcome,
-                            hg.Win, hg.Featured, hg.Date
-                        FROM HorseGame hg";
+                        SELECT hg.Id, hg.UserId, hg.HorseBetId,
+                            hg.HorseWonId, hg.AmountBet,
+	                        hg.NewAmount, hg.Win, hg.Featured, 
+                            hg.[Date]
+                        FROM HorseGames hg";
 
                     var bounties = new List<HorseGame>();
 
@@ -47,10 +48,11 @@ namespace FS_Faux_Lotto.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        SELECT hg.Id, hg.UserId, hg.AmountBet,
-	                        hg.NewAmount, hg.Choice, hg.Outcome,
-                            hg.Win, hg.Featured, hg.Date
-	                    FROM HorseGame hg
+                        SELECT hg.Id, hg.UserId, hg.HorseBetId,
+                            hg.HorseWonId, hg.AmountBet,
+	                        hg.NewAmount, hg.Win, hg.Featured, 
+                            hg.[Date]
+	                    FROM HorseGames hg
                         WHERE hg.Id = @id";
                     cmd.Parameters.AddWithValue("@id", id);
 
@@ -77,7 +79,7 @@ namespace FS_Faux_Lotto.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        INSERT INTO HorseGame ( UserId, HorseBetId, HorseWonId, AmountBet, NewAmount, Win, Featured, Date )
+                        INSERT INTO HorseGames ( UserId, HorseBetId, HorseWonId, AmountBet, NewAmount, Win, Featured, [Date] )
                         OUTPUT INSERTED.ID
                         VALUES ( @UserId, @HorseBetId, @HorseWonId, @AmountBet, @NewAmount, @Win, @Featured, @Date )";
                     cmd.Parameters.AddWithValue("@UserId", horseGame.UserId);
