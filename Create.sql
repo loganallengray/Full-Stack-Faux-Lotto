@@ -5,7 +5,7 @@ CREATE TABLE `Users` (
   `FirstName` varchar(50) NOT NULL,
   `LastName` varchar(50) NOT NULL,
   `Email` varchar(255) NOT NULL,
-  `Imagelocation` varchar(255) NOT NULL,
+  `ImageLocation` varchar(255) NOT NULL,
   `Currency` int NOT NULL,
   `Wins` int NOT NULL,
   `Losses` int NOT NULL
