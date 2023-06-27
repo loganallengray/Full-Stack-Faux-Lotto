@@ -1,0 +1,12 @@
+-- CREATE TABLE `Users` (
+--   `Id` int PRIMARY KEY AUTO_INCREMENT,
+--   `FirebaseId` varchar(28) NOT NULL,
+--   `UserName` varchar(50) NOT NULL,
+--   `FirstName` varchar(50) NOT NULL,
+--   `LastName` varchar(50) NOT NULL,
+--   `Email` varchar(255) NOT NULL,
+--   `Imagelocation` varchar(255) NOT NULL,
+--   `Currency` int NOT NULL,
+--   `Wins` int NOT NULL,
+--   `Losses` int NOT NULL
+-- );
