@@ -23,9 +23,7 @@ namespace FS_Faux_Lotto.Repositories
                             u.FirstName, u.LastName, u.Email,
                             u.ImageLocation, u.Currency, u.Wins,
                             u.Losses
-                        FROM [User] u
-                            LEFT JOIN UserType ut ON u.UserTypeId = ut.Id
-                        ORDER BY ut.Id, u.UserName;";
+                        FROM Users u";
 
                     var users = new List<User>();
 
@@ -54,7 +52,7 @@ namespace FS_Faux_Lotto.Repositories
                             u.FirstName, u.LastName, u.Email,
                             u.ImageLocation, u.Currency, u.Wins,
                             u.Losses
-                        FROM [User] u
+                        FROM Users u
                         WHERE u.Id = @id;";
 
                     DbUtils.AddParameter(cmd, "@id", id);
@@ -86,9 +84,8 @@ namespace FS_Faux_Lotto.Repositories
                             u.FirstName, u.LastName, u.Email,
                             u.ImageLocation, u.Currency, u.Wins,
                             u.Losses
-                        FROM [User] u
-                            LEFT JOIN UserType ut ON u.UserTypeId = ut.id
-                        WHERE FireBaseId = @FireBaseId AND u.Locked != 1";
+                        FROM Users u
+                        WHERE FireBaseId = @FireBaseId";
                     DbUtils.AddParameter(cmd, "@FireBaseId", fireBaseId);
 
                     User user = null;
@@ -113,7 +110,7 @@ namespace FS_Faux_Lotto.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        INSERT INTO [User] (FireBaseId, UserName, FirstName, LastName, Email, ImageLocation, Currency, Wins, Losses)
+                        INSERT INTO Users (FireBaseId, UserName, FirstName, LastName, Email, ImageLocation, Currency, Wins, Losses)
                         OUTPUT INSERTED.ID
                         VALUES (@FireBaseId, @UserName, @FirstName, @LastName, @Email, @ImageLocation, @Currency, @Wins, @Losses)";
 
@@ -140,7 +137,7 @@ namespace FS_Faux_Lotto.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        UPDATE [User]
+                        UPDATE Users
                             SET UserName = @UserName,
                                 FirstName = @FirstName, 
                                 LastName = @LastName,
